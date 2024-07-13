@@ -1,0 +1,109 @@
+<%if(errorMessage) { %>
+    <div class="alert alert-danger" role="alert"><%=errorMessage%></div>
+    
+    <%}%>
+    
+    <div id="new-job-container">
+      <form action="/jobs/<%=job.id%>/update" method="post">
+        <h1 class="mt-4 mb-4">Update Job</h1>
+        <div class="mb-3">
+          <select
+            class="form-select"
+            name="jobCategory"
+            id="jobCategory"
+            aria-label="select job category"
+          >
+            <option selected>select job category</option>
+            <option value="Tech">Tech</option>
+            <option value="Non tech">Non tech</option>
+          </select>
+        </div>
+    
+        <div class="mb-3">
+          <select
+            class="form-select"
+            name="jobDesignation"
+            id="jobDesignation"
+            aria-label="select job designation"
+          >
+            <option selected>select job designation</option>
+            <option value="HR">HR</option>
+            <option value="SDE">SDE</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="Full Stack Developer">Full Stack Developer</option>
+            <option value="Java Developer">Java Developer</option>
+            <option value="Python Developer">Python Developer</option>
+          </select>
+        </div>
+    
+        <div class="mb-3">
+          <label for="jobLocation" class="form-label">Enter Job Location</label>
+          <input
+            type="text"
+            class="form-control"
+            id="jobLocation"
+            name="jobLocation"
+            value="<%=job.jobLocation%>"
+          />
+        </div>
+    
+        <div class="mb-3 input-group">
+          <span class="input-group-text" id="companyName-wrapping"
+            >Company's Name</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="companyName"
+            id="companyName"
+            aria-describedby="companyName-wrapping"
+            value="<%=job.companyName%>"
+          />
+        </div>
+    
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            name="salary"
+            id="salary"
+            placeholder="enter salary"
+            aria-label="enter salary"
+          />
+          <span class="input-group-text">Total Positions</span>
+          <input
+            type="number"
+            class="form-control"
+            name="numberOfOpenings"
+            id="numberOfOpenings"
+            placeholder="total no. of openings"
+            aria-label="total no. of openings"
+            value="<%=job.numberOfOpenings%>"
+          />
+        </div>
+    
+        <div class="input-group mb-3">
+          <select
+            class="form-select"
+            multiple
+            name="skillsReq"
+            id="skillsReq"
+            aria-label="select skills required for this job"
+          >
+            <option selected>select skills required for this job</option>
+            <option value="React">React</option>
+            <option value="Node">Node</option>
+            <option value="Angular">Angular</option>
+            <option value="Flutter">Flutter</option>
+            <option value="Dart">Dart</option>
+          </select>
+          <span class="input-group-text">Apply By</span>
+          <input type="date" class="form-control" name="applyBy" id="applyBy" />
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>

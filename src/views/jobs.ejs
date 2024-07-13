@@ -1,0 +1,40 @@
+<%if(locals.lastVisit) {%>
+    <div class="alert alert-primary" role="alert">
+      You last visit was on : <%=locals.lastVisit%>
+    </div>
+    <%}%>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+      <% jobs.forEach((job) => { %>
+    
+      <div class="col">
+        <div class="card p-2">
+          <a class="btn btn-outline-success disabled col-10">
+            Actively Recruiting
+          </a>
+          <div class="card-body">
+            <h5 class="card-title"><%= job.companyName %></h5>
+            <div class="card-text">
+              <span><%= job.jobCategory %></span>
+              <span><%= job.jobDesignation %></span>
+    
+              <div>
+                <h5><%= job.jobLocation %>, IND</h5>
+                <p>Rs.<%= job.salary %> /annum</p>
+    
+                <% job.skillsReq.forEach((skill) => { %>
+                <a class="btn btn-outline-primary"><%=skill%></a>
+    
+                <% }) %>
+              </div>
+              <a
+                class="d-grid btn btn-outline-success mt-4"
+                href="/jobs/<%=job.id%>"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <% }) %>
+    </div>

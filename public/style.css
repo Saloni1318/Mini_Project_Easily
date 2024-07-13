@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+body {
+  font-family: "Raleway";
+  background-image:url("https://ynet-pic1.yit.co.il/picserver5/wcm_upload/2022/02/14/BycJaIe00kq/shutterstock.jpg");
+  color: red;
+  font-weight: bold;
+}
+
+.landing-title {
+  margin-top: 10vmin;
+  color: white;
+  font-weight: bold;
+}
+.landing-title1 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+  .landing-title2 {
+    color: white;
+    font-weight: bold;
+    /* margin-top: ; */
+  }
+
+#new-job-container {
+  margin: auto;
+  width: 60vmax;
+  padding: 0 10vmin 10vmin 10vmin;
+  margin-bottom: 10vmin;
+  margin-top: 5vmin;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Raleway";
+}
+
+.front-page-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.front-page-text-container {
+  padding-top: 5vmax;
+  padding-left: 2vmax;
+   border: 2px solid rgba(183, 235, 235, 0.152);; 
+  margin-left: 20%;
+  background-color: rgba(183, 235, 235, 0.152);
+  text-align: center;
+  margin-top: 10%;
+  
+}
+
+.landing-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.front-banner {
+  width: 50%;
+}

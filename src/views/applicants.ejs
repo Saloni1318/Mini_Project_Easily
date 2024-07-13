@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Uid</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Resume/ CV</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%applicants.forEach((a) => {%>
+      <tr>
+        <th scope="row"><%=a.id%></th>
+        <td><%=a.name%></td>
+        <td><%=a.email%></td>
+        <td><%=a.contact%></td>
+        <td><a href="/<%=a.resume%>" target="_blank">View</a></td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>

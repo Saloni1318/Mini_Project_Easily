@@ -1,0 +1,174 @@
+<%if(errorMessage) {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%=errorMessage%>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <%}%> <%if(!errorMessage && success) {%>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      User Registered successfully!
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <%}%> <%if(locals.lastVisit) {%>
+    <div class="alert alert-primary" role="alert">
+      You last visit was on : <%=locals.lastVisit%>
+    </div>
+    <%}%>
+    <div class="front-page-container">
+      <div class="front-page-text-container">
+        <h3 class="landing-title">
+          A Best platform for relaible Job Seeker
+        </h3>
+        <h5 class="landing-title1">Job opportunities to placed</h5>
+        <h5 class="landing-title2">Get Searched. Get Hired</h5>
+    
+        <a href="/jobs" class="btn btn-primary">I'm a Job Seeker</a>
+        <a
+          href="#"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#registerModal"
+          >I'm a recruiter</a
+        >
+      </div>
+    
+      <!-- <img src="/front.jpg" class="front-banner" /> -->
+    </div>
+    
+    <div class="modal fade" id="registerModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Experience easily!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="/register" method="post">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addonName"> Name </span>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  placeholder="enter your full name"
+                  aria-label="name"
+                  aria-describedby="basic-addonName"
+                />
+              </div>
+    
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addonEmail"> Email </span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="email address"
+                  aria-label="name"
+                  aria-describedby="basic-addonEmail"
+                />
+              </div>
+    
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addonPassword">
+                  Password
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="enter your password"
+                  aria-label="password"
+                  aria-describedby="basic-addonPassword"
+                />
+              </div>
+    
+              <button type="submit" class="btn btn-success">Register</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <p>
+              <span>Already Registered ?</span>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Login
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="loginModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Experience easily!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="/login" method="post">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addonEmail"> Email </span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="email address"
+                  aria-label="name"
+                  aria-describedby="basic-addonEmail"
+                />
+              </div>
+    
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addonPassword">
+                  Password
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="enter your password"
+                  aria-label="password"
+                  aria-describedby="basic-addonPassword"
+                />
+              </div>
+    
+              <button type="submit" class="btn btn-success">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
